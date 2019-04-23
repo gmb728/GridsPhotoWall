@@ -25,7 +25,7 @@ class ScrollViewViewController: UIViewController, UIScrollViewDelegate{
         myImageView.image = scrollViewImage
         myImageView.contentMode = UIView.ContentMode.scaleAspectFit
         myScrollView.delegate = self
-        // Do any additional setup after loading the view.
+
     }
      
 }

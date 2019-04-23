@@ -30,6 +30,8 @@ class CollectionViewController: UICollectionViewController{
         let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         let width = (view.bounds.width - 10) / 2
         layout?.itemSize = CGSize(width: width, height: width + 10)
+        
+
     }
 
 

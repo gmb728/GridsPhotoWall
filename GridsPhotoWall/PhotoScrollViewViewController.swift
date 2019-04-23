@@ -17,6 +17,9 @@ class PhotoScrollViewViewController: UIViewController, UIScrollViewDelegate{
     var scrollViewImage: UIImage?
     
     
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return myImageView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         myImageView.image = scrollViewImage
@@ -24,9 +27,6 @@ class PhotoScrollViewViewController: UIViewController, UIScrollViewDelegate{
         myScrollView.delegate = self
       
         
-        func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-            return myImageView
-        }
         
         
     }

@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
  
+    
+    var collectionImage: UIImage?
+    
     var photoArray: [String] = ["AntMan", "BlackPanther", "BlackWidow", "CaptainAmerican","CaptainMarvel", "Drax", "DrStranger","Gamora", "Hawkeye","Hulk","IronMan","Loki","Mantis","NickFury","Okoye","Pepper","Rocket","ScarletWitch","Thor","Valkyrie", "WinterSoldier", "Wong","Groot","Wasp"]
     
    
@@ -33,17 +36,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
 
         fullScreenSize = UIScreen.main.bounds.size
-        
-        // 建立 UICollectionViewFlowLayout
         let layout = UICollectionViewFlowLayout()
-        
-        // 設置 section 的間距 四個數值分別代表 上、左、下、右 的間距
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5);
-        
-        // 設置每一行的間距
         layout.minimumLineSpacing = 5
-        
-        // 設置每個 cell 的尺寸
         layout.itemSize = CGSize(
             width: CGFloat(fullScreenSize.width)/2 - 10.0, height: CGFloat(fullScreenSize.width)/2 - 10.0)
         
@@ -74,18 +69,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionImage = nil
     }
     
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
         let controller = segue.destination as? ScrollViewViewController
         controller?.scrollViewImage = collectionImage
         
-        
+        }
     }
     
     
-}
+
 
